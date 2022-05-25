@@ -13,3 +13,4 @@ def on_click(x, y, button, pressed):
 
 with mouse.Listener(on_click=on_click) as listener:
     listener.join()
+    
