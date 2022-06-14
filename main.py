@@ -6,11 +6,12 @@ def on_click(x, y, button, pressed):
     if pressed is True:
         r,g,b = pyautogui.pixel(x, y)
         rgb = (f'{r}, {g}, {b}')
+        rgbperc = f'{r/ 255:.3f},{g/ 255:.3f},{b/ 255:.3f}'
         rgbhex = '#%02x%02x%02x' % (r,g,b)
 
-        print(rgb)
-        print(rgbhex,'\n')
+        print(f'RGB: {rgb}')
+        print(f'Percentual: {rgbperc}')
+        print(f'Hexadecimal: {rgbhex}\n')
 
 with mouse.Listener(on_click=on_click) as listener:
     listener.join()
-    
